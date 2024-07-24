@@ -1,0 +1,6 @@
+.gradle/
+build/
+.vscode/
+gradle/wrapper/gradle-wrapper.jar
+curl.txt
+.env
