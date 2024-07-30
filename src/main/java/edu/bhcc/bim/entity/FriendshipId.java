@@ -4,16 +4,16 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public class FriendshipId implements Serializable {
-    private Integer userId1;
-    private Integer userId2;
+    private Integer fromUserId;
+    private Integer toUserId;
 
     // Default constructor, equals, and hashCode methods
     public FriendshipId() {
     }
 
-    public FriendshipId(Integer userId1, Integer userId2) {
-        this.userId1 = userId1;
-        this.userId2 = userId2;
+    public FriendshipId(Integer fromUserId, Integer toUserId) {
+        this.fromUserId = fromUserId;
+        this.toUserId = toUserId;
     }
 
     @Override
@@ -23,37 +23,37 @@ public class FriendshipId implements Serializable {
         if (!(o instanceof FriendshipId))
             return false;
         FriendshipId that = (FriendshipId) o;
-        return userId1.equals(that.userId1) && userId2.equals(that.userId2);
+        return fromUserId.equals(that.fromUserId) && toUserId.equals(that.toUserId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userId1, userId2);
+        return Objects.hash(fromUserId, toUserId);
     }
 
     // Getters and setters
-    public Integer getUserId1() {
-        return userId1;
+    public Integer getFromUserId() {
+        return fromUserId;
     }
 
-    public void setUserId1(Integer userId1) {
-        this.userId1 = userId1;
+    public void setFromUserId(Integer fromUserId) {
+        this.fromUserId = fromUserId;
     }
 
-    public Integer getUserId2() {
-        return userId2;
+    public Integer getToUserId() {
+        return toUserId;
     }
 
-    public void setUserId2(Integer userId2) {
-        this.userId2 = userId2;
+    public void setToUserId(Integer toUserId) {
+        this.toUserId = toUserId;
     }
 
     // toString method
     @Override
     public String toString() {
         return "FriendshipId{" +
-                "userId1=" + userId1 +
-                ", userId2=" + userId2 +
+                "fromUserId=" + fromUserId +
+                ", toUserId=" + toUserId +
                 '}';
     }
 }

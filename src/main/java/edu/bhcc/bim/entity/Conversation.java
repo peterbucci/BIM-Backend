@@ -17,6 +17,14 @@ public class Conversation {
     @Column(nullable = false, updatable = false, insertable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private Timestamp createdAt;
 
+    public Conversation() {
+    }
+
+    public Conversation(String conversationName, ConversationType type) {
+        this.conversationName = conversationName;
+        this.type = type;
+    }
+
     // Getters and setters
     public Integer getConversationId() {
         return conversationId;

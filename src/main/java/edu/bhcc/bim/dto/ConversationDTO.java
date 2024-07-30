@@ -1,25 +1,24 @@
 package edu.bhcc.bim.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ConversationDTO {
     private Integer conversationId;
-    private String conversationName;
-    private String type;
-    private List<UserDTO> participants;
-
-    // Constructors, getters, and setters
+    private UserDTO participant;
+    private List<MessageDTO> messages;
 
     public ConversationDTO() {
+        this.messages = new ArrayList<>(); // Initialize to an empty list
     }
 
-    public ConversationDTO(Integer conversationId, String conversationName, String type, List<UserDTO> participants) {
+    public ConversationDTO(Integer conversationId, UserDTO participant, List<MessageDTO> messages) {
         this.conversationId = conversationId;
-        this.conversationName = conversationName;
-        this.type = type;
-        this.participants = participants;
+        this.participant = participant;
+        this.messages = messages;
     }
 
+    // Getters and setters
     public Integer getConversationId() {
         return conversationId;
     }
@@ -28,27 +27,19 @@ public class ConversationDTO {
         this.conversationId = conversationId;
     }
 
-    public String getConversationName() {
-        return conversationName;
+    public UserDTO getParticipant() {
+        return participant;
     }
 
-    public void setConversationName(String conversationName) {
-        this.conversationName = conversationName;
+    public void setParticipant(UserDTO participant) {
+        this.participant = participant;
     }
 
-    public String getType() {
-        return type;
+    public List<MessageDTO> getMessages() {
+        return messages;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public List<UserDTO> getParticipants() {
-        return participants;
-    }
-
-    public void setParticipants(List<UserDTO> participants) {
-        this.participants = participants;
+    public void setMessages(List<MessageDTO> messages) {
+        this.messages = messages;
     }
 }

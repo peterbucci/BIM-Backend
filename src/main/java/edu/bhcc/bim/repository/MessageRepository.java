@@ -8,4 +8,6 @@ import java.util.List;
 
 public interface MessageRepository extends CrudRepository<Message, Integer> {
     List<Message> findByConversation(Conversation conversation);
+
+    List<Message> findByConversationOrderBySentAtAsc(Conversation conversation);
 }

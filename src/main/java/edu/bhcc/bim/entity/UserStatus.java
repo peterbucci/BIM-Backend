@@ -19,7 +19,11 @@ public class UserStatus {
     @Enumerated(EnumType.STRING)
     private Status status;
 
+    @Column(nullable = false, updatable = false, insertable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private Timestamp lastActive;
+
+    public UserStatus() {
+    }
 
     // Getters and setters
     public Integer getId() {

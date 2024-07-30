@@ -23,6 +23,9 @@ public class Message {
     @Column(nullable = false, updatable = false, insertable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private Timestamp sentAt;
 
+    public Message() {
+    }
+
     // Getters and setters
     public Integer getMessageId() {
         return messageId;

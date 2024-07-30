@@ -7,5 +7,7 @@ import edu.bhcc.bim.entity.Friendship;
 import edu.bhcc.bim.entity.FriendshipId;
 
 public interface FriendshipRepository extends CrudRepository<Friendship, FriendshipId> {
-    List<Friendship> findByUserId1OrUserId2(Integer userId1, Integer userId2);
+    List<Friendship> findByFromUserIdOrToUserId(Integer fromUserId, Integer toUserId);
+
+    Friendship findByFromUserIdAndToUserId(Integer fromUserId, Integer toUserId);
 }

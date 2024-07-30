@@ -1,25 +1,20 @@
-package edu.bhcc.bim.entity;
+package edu.bhcc.bim.dto;
 
-import jakarta.persistence.*;
-import java.sql.Timestamp;
 import edu.bhcc.bim.common.Status;
 
-@Entity
-@IdClass(FriendshipId.class)
-public class Friendship {
-    @Id
-    @Column(name = "from_user_id")
+public class FriendshipDTO {
     private Integer fromUserId;
-
-    @Id
-    @Column(name = "to_user_id")
     private Integer toUserId;
-
-    @Enumerated(EnumType.STRING)
     private Status status;
 
-    @Column(nullable = false, updatable = false, insertable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private Timestamp requestedAt;
+    public FriendshipDTO() {
+    }
+
+    public FriendshipDTO(Integer fromUserId, Integer toUserId, Status status) {
+        this.fromUserId = fromUserId;
+        this.toUserId = toUserId;
+        this.status = status;
+    }
 
     // Getters and setters
     public Integer getFromUserId() {
@@ -46,21 +41,12 @@ public class Friendship {
         this.status = status;
     }
 
-    public Timestamp getRequestedAt() {
-        return requestedAt;
-    }
-
-    public void setRequestedAt(Timestamp requestedAt) {
-        this.requestedAt = requestedAt;
-    }
-
     @Override
     public String toString() {
-        return "Friendship{" +
+        return "FriendshipDTO{" +
                 "fromUserId=" + fromUserId +
                 ", toUserId=" + toUserId +
                 ", status=" + status +
-                ", requestedAt=" + requestedAt +
                 '}';
     }
 }
