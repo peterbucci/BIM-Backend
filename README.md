@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is the backend for the messenger App. It uses Spring Boot and MySQL to manage user data, friendships, and messages.
+This is the backend for the messenger App. It uses Spring Boot and MySQL to manage user data, friendships, and messages. You can find the frontend [here](https://github.com/peterbucci/Bim-Frontend)
 
 ## Prerequisites
 
