@@ -109,4 +109,4 @@ The database is automatically created when you build the project. It is set up i
 - The application will automatically create the required database and tables on startup.
 - You can access the application at `http://localhost:8080`.
 
-For any issues or contributions, please refer to the repository on [GitHub](https://github.com/your-repo-link).
+For any issues or contributions, please refer to the repository on [GitHub](https://github.com/peterbucci/BIM-Backend).
